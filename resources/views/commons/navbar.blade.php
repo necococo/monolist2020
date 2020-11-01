@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
                         <li>
-                            <!--GET|HEAD | items/create | items.create | App\Http\Controllers\ItemsController@create | web,auth  -->
+                            <!--これはキーワードなしのget urlなので検索フォームが表示されるだけ  -->
                             <a href="{{ route('items.create') }}">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                 アイテムを追加
@@ -31,7 +31,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#">マイページ</a>
+                                    <a href="{{ route('users.show', Auth::id() ) }}">マイページ</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
