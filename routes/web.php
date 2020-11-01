@@ -22,9 +22,11 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::group(['middleware' => ['auth']], function () {
     // get    /items/create    &   /items/create?utf8=%E2%9C%93&keyword=aaaaaa&commit=%E5%95%86%E5%  とか
-    Route::resource('items', 'ItemsController', ['only' => ['create']]);
+    Route::resource('items', 'ItemsController', ['only' => ['create', 'show']]);
     // /want
-    Route::post('want','ItemUserController@want')->name('item_user.want.');
-    Route::delete('want', 'ItemUserController@dont_want')->name('item_user.dont_want.');
+    Route::post('want','ItemUserController@want')->name('item_user.want');
+    Route::delete('want', 'ItemUserController@dont_want')->name('item_user.dont_want');
+    Route::post('have','ItemUserController@have')->name('item_user.have');
+    Route::delete('have', 'ItemUserController@dont_have')->name('item_user.dont_have');
     Route::resource('users', 'UsersController', ['only' => ['show']]);    
 });

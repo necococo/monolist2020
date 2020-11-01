@@ -6,7 +6,7 @@
             <div class="item">
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">
-                        <img src="{{ $item->image_url }}" alt="">
+                        <a href="{{ $item->url }}" target="_blank"><img src="{{ $item->image_url }}" alt=""></a>
                     </div>
                     <div class="panel-body">
                         <p class="item-title">{{ $item->name }}</p>
@@ -39,6 +39,9 @@
                         Haveしたユーザ
                     </div>
                     <div class="panel-body">
+                        @foreach ($have_users as $user)
+                            <a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>
