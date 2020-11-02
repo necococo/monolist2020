@@ -19,7 +19,7 @@ use App\Item;
             $rws_response = $client->execute('IchibaItemSearch', [
                 'keyword' => $keyword,
                 'imageFlag' => 1,
-                'hits' => 100,
+                'hits' => 20,
             ]);
 
             // 扱い易いように Item としてインスタンスを作成する（保存はしない）
