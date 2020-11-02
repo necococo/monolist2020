@@ -13,6 +13,10 @@
 
 Route::get('/', 'WelcomeController@index');
 // ユーザ登録  /signup
+
+Route::get('ranking/want', 'RankingController@want')->name('ranking.want');
+Route::get('ranking/have', 'RankingController@have')->name('ranking.have');
+
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
 // ログイン認証  /login

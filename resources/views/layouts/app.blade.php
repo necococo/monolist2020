@@ -16,10 +16,10 @@
     </head>
     <body>
         @include('commons.navbar')<!--ここに"/views/commons/navbar.blade.php"が読み込まれる -->
-        @yield('cover')<!--ここに子要素("/views/welcome.blade.php")の@section('cover')が読み込まれる -->
+        @yield('cover')<!--ここに子要素の@section('cover')がページごとに内容が変わって読み込まれる -->
         <div class="container">
             @include('commons.error_messages')<!--ここに"/views/commons/error_messages.blade.php"が読み込まれる -->
-            @yield('content')<!--ここに子要素("/views/welcome.blade.php")の@section('content')が読み込まれる -->
+            @yield('content')<!--ここに子要素の@section('content')がページごとに内容が変わって読み込まれる -->
         </div>
         @include('commons.footer')<!--ここに"/views/commons/footer.blade.php"が読み込まれる -->
     </body>

@@ -1,6 +1,7 @@
 @if ($items)
     <div class="row">
-        @foreach ($items as $item)
+        <!--$key $value両方取り出しておいて必要な場合はランキング順位にkeyを利用する-->
+        @foreach ($items as $key => $item)
             <div class="item">
                 <div class="col-md-3 col-sm-4 col-xs-12">
                     <div class="panel panel-default">
@@ -20,6 +21,16 @@
                                 @endif
                             </div>
                         </div>
+                        @if (isset($item->count))
+                            <div class="panel-footer">
+                                @if (Request::is('ranking/want'))
+                                    <p class="text-center">{{ $key+1 }}位: {{ $item->count }} Wants</p>
+                                @endif
+                                @if (Request::is('ranking/have'))
+                                    <p class="text-center">{{ $key+1 }}位: {{ $item->count }} Haves</p>
+                                @endif
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
