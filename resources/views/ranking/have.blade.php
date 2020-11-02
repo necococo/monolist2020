@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Haveランキング</h1>
+    <h2 class="text-center">Have Ranking</h2>
     @include('items.items', ['items' => $items])
 @endsection
